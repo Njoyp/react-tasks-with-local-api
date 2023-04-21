@@ -53,6 +53,8 @@ function App() {
     setTasks(updatedTasks);
   };
   const deleteTask = async (taskId) => {
+    // taskId gets it's value when the deletebutton is clicked this with give the parameter it's value
+    // like an event
     await fetch(`http://localhost:3030/tasks/${taskId}`, {
       method: "DELETE",
     });
@@ -78,7 +80,7 @@ function App() {
           <Task
             task={item}
             key={item.id}
-            updateTasks={updateTasks}
+            updateTasksCallback={updateTasks}
             deleteTask={deleteTask}
           />
         );
